@@ -26,12 +26,6 @@ const App = () => {
                     <Route path='/movies/:movieId/*' element={<MovieDetails/>}/>
                 </Routes>
             </Suspense>
-
-            {/* {error && <h1>{error}</h1>}
-            {isLoading && <Loader /> }
-            <ImageGallery images={images} handleOpenModal={handleOpenModal}/>
-            {totalPages > 1 && page !== totalPages && <Button handleLoadMore={handleLoadMore} />}*/}
-
         </div>
     )
 	
