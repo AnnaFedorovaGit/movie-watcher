@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+}
+
+.formInput {
+  width: 200px;
+  height: 25px;
+  padding-left: 10px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  width: 36px;
+}
