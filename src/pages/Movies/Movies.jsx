@@ -35,12 +35,12 @@ const Movies = () => {
      }, [query]);
 
     const handleSubmit = (e) => {
-		e.preventDefault();
-
+        e.preventDefault();
+        
         const searchMovies = e.currentTarget.elements.query.value;
+        if (!searchMovies) return;
         setSearchParams({ query: searchMovies });
         e.target[0].value = '';
-        setSearchedMovies({});
     }
         
     return (

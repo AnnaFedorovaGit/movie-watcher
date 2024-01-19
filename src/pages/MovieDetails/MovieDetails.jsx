@@ -74,7 +74,7 @@ const MovieDetails = () => {
                 </>
             }
 
-            <Suspense>
+            <Suspense fallback={ <Loader/> }>
                 <Routes>
                     <Route path='cast' element={<Cast/>}/>
                     <Route path='reviews' element={<Reviews/>}/>
