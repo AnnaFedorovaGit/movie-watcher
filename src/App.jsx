@@ -17,7 +17,7 @@ const App = () => {
                     <NavLink className={({ isActive }) => `${css['headerLink']} ${isActive ? css.active : ''}`} to='/'>Home</NavLink>
                     <NavLink className={({ isActive }) => `${css['headerLink']} ${isActive ? css.active : ''}`} to='/movies'>Movies</NavLink>
                 </nav>
-                <Outlet />
+                {/* <Outlet /> */}
             </header>        
 
             <Suspense fallback={ <Loader/> }>
