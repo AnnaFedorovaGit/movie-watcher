@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
 import Loader from './components/Loader/Loader'
+import NotFoundPath from './components/NotFoundPath/NotFoundPath'
 
 import css from './App.module.css'
 
@@ -25,7 +26,7 @@ const App = () => {
                     <Route path='/movies/*' element={<Movies/>}/>
                     <Route path='/movies/:movieId/*' element={<MovieDetails />} />
                     {/* add: */}
-                    {/* <Route path="*" element={<NotFound />} /> */}
+                    <Route path="*" element={<NotFoundPath />} />
                 </Routes>
             </Suspense>
         </div>
