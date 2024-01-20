@@ -2,7 +2,7 @@ import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import { Link, NavLink, Route, Routes, useParams, useLocation, Outlet } from "react-router-dom";
 import { getMovieDetails } from '../../services/movies'
 import Loader from '../../components/Loader/Loader'
-import NotFoundPath from '../../components/NotFoundPath/NotFoundPath'
+// import NotFoundPath from '../../components/NotFoundPath/NotFoundPath'
 
 import defaultImage from '../../images/default-image.jpg'
 import css from './MovieDetails.module.css'
@@ -82,7 +82,7 @@ const MovieDetails = () => {
                     <Route path='cast' element={<Cast/>}/>
                     <Route path='reviews' element={<Reviews />} />
                     {/* add: */}
-                    <Route path="*" element={<NotFoundPath />} />
+                    {/* <Route path="*" element={<NotFoundPath />} /> */}
                 </Routes>
             </Suspense>
         </section>
