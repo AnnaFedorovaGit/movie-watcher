@@ -2,7 +2,7 @@ import defaultPersonImage from '../../images/default-person-image.jpg'
 import css from './CastItem.module.css'
 
 const CastItem = ({ element }) => {
-    const INIT_PATH_IMAGE = 'http://image.tmdb.org/t/p/w500';
+    const INIT_PATH_IMAGE = 'https://image.tmdb.org/t/p/w500';
     
     return (
         <li>

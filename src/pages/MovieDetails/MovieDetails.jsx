@@ -15,7 +15,7 @@ const MovieDetails = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
     const { title, poster_path, vote_average, overview, genres } = movieData;
-    const INIT_PATH_IMAGE = 'http://image.tmdb.org/t/p/w500';
+    const INIT_PATH_IMAGE = 'https://image.tmdb.org/t/p/w500';
 
     const location = useLocation();
     const backLinkHref = useRef(location.state?.from ?? '/');
