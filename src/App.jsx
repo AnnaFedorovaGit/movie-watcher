@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react'
-import { NavLink, Route, Routes } from 'react-router-dom'
+import { NavLink, Route, Routes, Outlet } from 'react-router-dom'
 import Loader from './components/Loader/Loader'
 
 import css from './App.module.css'
@@ -17,13 +17,16 @@ const App = () => {
                     <NavLink className={({ isActive }) => `${css['headerLink']} ${isActive ? css.active : ''}`} to='/'>Home</NavLink>
                     <NavLink className={({ isActive }) => `${css['headerLink']} ${isActive ? css.active : ''}`} to='/movies'>Movies</NavLink>
                 </nav>
+                <Outlet />
             </header>        
 
             <Suspense fallback={ <Loader/> }>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/movies/*' element={<Movies/>}/>
-                    <Route path='/movies/:movieId/*' element={<MovieDetails/>}/>
+                    <Route path='/movies/:movieId/*' element={<MovieDetails />} />
+                    {/* add: */}
+                    {/* <Route path="*" element={<NotFound />} /> */}
                 </Routes>
             </Suspense>
         </div>

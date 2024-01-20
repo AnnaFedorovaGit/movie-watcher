@@ -36,6 +36,7 @@ const Cast = () => {
             {isLoading ? <Loader /> :
                 <ul className={css.gallery}>
                     {cast?.map((el, index) => <CastItem element={el} key={index} />)}
+                    {/* <Outlet />   ??? */}
                 </ul>
             }
         </>

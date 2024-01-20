@@ -38,7 +38,9 @@ const Reviews = () => {
                     {reviewsData.results?.length > 0 ? (
                         <ul className={css.gallery}>
                             {reviewsData.results?.map((el, index) => <ReviewsItem element={el} key={index} />)}
-                        </ul>) :
+                        </ul>)
+                        // < Outlet />  ???
+                        :
                         <ReviewsLack />}
                 </>
             }   

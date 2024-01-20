@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect, useRef, useState } from 'react'
-import { Link, NavLink, Route, Routes, useParams, useLocation } from "react-router-dom";
+import { Link, NavLink, Route, Routes, useParams, useLocation, Outlet } from "react-router-dom";
 import { getMovieDetails } from '../../services/movies'
 import Loader from '../../components/Loader/Loader'
 
@@ -70,14 +70,18 @@ const MovieDetails = () => {
                             <li><NavLink to='cast' className={css.text}>Cast</NavLink></li>
                             <li><NavLink to='reviews' className={css.text}>Reviews</NavLink></li>  
                         </ul>
+                        <Outlet />
                     </div>
                 </>
             }
 
-            <Suspense fallback={ <Loader/> }>
+            <Suspense fallback={<Loader />}>
                 <Routes>
+                {/* <Route path="/about" element={<About />}>  --------------?*/}
                     <Route path='cast' element={<Cast/>}/>
-                    <Route path='reviews' element={<Reviews/>}/>
+                    <Route path='reviews' element={<Reviews />} />
+                    {/* add: */}
+                    {/* <Route path="*" element={<NotFound />} /> */}
                 </Routes>
             </Suspense>
         </section>
