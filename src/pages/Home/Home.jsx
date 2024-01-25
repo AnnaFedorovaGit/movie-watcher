@@ -1,5 +1,5 @@
-import { useState, useEffect, Suspense, useRef } from 'react'
-import { useSearchParams, Outlet, useLocation } from 'react-router-dom'
+import { useState, useEffect, Suspense } from 'react'
+import { useSearchParams, Outlet } from 'react-router-dom'
 import { getTrendingMovies } from 'services/movies'
 import MoviesList from 'components/MoviesList/MoviesList'
 import Loader from 'components/Loader/Loader'
@@ -22,7 +22,7 @@ const Home = () => {
 
     useEffect(() => {
         getMovies(page);
-        setNumberPage(page);
+        // setNumberPage(page);
     }, [page]);
 
     useEffect(() => {
@@ -32,11 +32,11 @@ const Home = () => {
         }         
     }, [searchParams]);
 
-    const setNumberPage = (currentPage) => { 
-        if (currentPage > 1) { 
-            setSearchParams({ page: currentPage });
-        }
-    }
+    // const setNumberPage = (currentPage) => { 
+    //     if (currentPage > 1) { 
+    //         setSearchParams({ page: currentPage });
+    //     }
+    // }
 
     const changePage = (_, page) => {
         setPage(page);

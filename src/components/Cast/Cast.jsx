@@ -4,7 +4,7 @@ import { getCast } from 'services/movies'
 import CastItem from 'components/CastItem/CastItem'
 import Loader from 'components/Loader/Loader'
 import NoInformation from 'components/NoInformation/NoInformation'
-import Button from 'components/Button/Button'
+// import Button from 'components/Button/Button'
 
 import css from 'components/Cast/Cast.module.css'
 
