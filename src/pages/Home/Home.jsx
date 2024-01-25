@@ -7,6 +7,7 @@ import BasicPagination from 'components/BasicPagination/BasicPagination'
 
 import css from 'pages/Home/Home.module.css'
 
+
 const Home = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [movies, setMovies] = useState([]);
@@ -21,9 +22,15 @@ const Home = () => {
     // console.log(location);
 
     useEffect(() => {
+        const setNumberPage = (currentPage) => { 
+            if (currentPage > 1) { 
+                setSearchParams({ page: currentPage });
+            }
+        }
+
+        setNumberPage(page);
         getMovies(page);
-        // setNumberPage(page);
-    }, [page]);
+    }, [page, setSearchParams]);
 
     useEffect(() => {
         const urlPage = searchParams.get('page');
@@ -31,12 +38,6 @@ const Home = () => {
             setPage(Number(urlPage));
         }         
     }, [searchParams]);
-
-    // const setNumberPage = (currentPage) => { 
-    //     if (currentPage > 1) { 
-    //         setSearchParams({ page: currentPage });
-    //     }
-    // }
 
     const changePage = (_, page) => {
         setPage(page);
