@@ -1,0 +1,8 @@
+.pagination :global .MuiButtonBase-root.MuiButtonBase-root {
+  font-family: DM Sans, sans-serif;
+}
+
+.pagination :global .MuiButtonBase-root.Mui-selected {
+  color: #fff;
+  background-color: var(--primary-turquoise-color);
+}

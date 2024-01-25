@@ -1,0 +1,17 @@
+.caption {
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.text {
+  font-size: 17px;
+}
+
+.text::after {
+  content: '';
+  display: block;
+  width: 250px;
+  height: 1px;
+  margin: 12px 0;
+  background-color: var(--gray-color);
+}

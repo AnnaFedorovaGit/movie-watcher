@@ -1,5 +1,5 @@
 import { FallingLines } from 'react-loader-spinner'
-import css from './Loader.module.css'
+import css from 'components/Loader/Loader.module.css'
 
 
 const Loader = () => { 

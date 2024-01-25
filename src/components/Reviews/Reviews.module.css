@@ -1,0 +1,12 @@
+.list {
+  white-space: break-spaces;
+  word-wrap: break-word;
+}
+
+.title {
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  text-transform: uppercase;
+}

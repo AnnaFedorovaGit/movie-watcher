@@ -2,9 +2,9 @@ import { api } from './api'
 
 const API_KEY = '6c9d40efe40649854134cfb0c7b749ad';
 
-export const getTrendingMovies = async () => { 
-    const { data } = await api(`3/trending/movie/day?language=en-US&api_key=${API_KEY}`)
-	return data
+export const getTrendingMovies = async (page) => { 
+    const { data } = await api(`3/trending/movie/day?page=${page}&language=en-US&api_key=${API_KEY}`)
+    return data
 }
 
 export const getMovieDetails = async (movieId) => { 

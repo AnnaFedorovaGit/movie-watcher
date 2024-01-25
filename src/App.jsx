@@ -1,37 +1,32 @@
-import { Suspense, lazy } from 'react'
-import { NavLink, Route, Routes } from 'react-router-dom'
-import Loader from './components/Loader/Loader'
-// import NotFoundPath from './components/NotFoundPath/NotFoundPath'
+import { lazy } from 'react'
+import { Route, Routes, Navigate } from 'react-router-dom'
+import Layout from 'components/Layout/Layout'
 
-import css from './App.module.css'
+import css from 'App.module.css'
 
 const Home = lazy(() => import('./pages/Home/Home'))
 const Movies = lazy(() => import('./pages/Movies/Movies'))
 const MovieDetails = lazy(() => import('./pages/MovieDetails/MovieDetails'))
+const Cast = lazy(() => import('./components/Cast/Cast'))
+const Reviews = lazy(() => import('./components/Reviews/Reviews'))
 
 
 const App = () => {
     return (
         <div className={css.wrapper}>
-            <header>
-                <nav className={css.navigation}>
-                    <NavLink className={({ isActive }) => `${css['headerLink']} ${isActive ? css.active : ''}`} to='/'>Home</NavLink>
-                    <NavLink className={({ isActive }) => `${css['headerLink']} ${isActive ? css.active : ''}`} to='/movies'>Movies</NavLink>
-                </nav>
-            </header>        
-
-            <Suspense fallback={ <Loader/> }>
-                <Routes>
-                    <Route path='/' element={<Home/>}/>
-                    <Route path='/movies/*' element={<Movies/>}/>
-                    <Route path='/movies/:movieId/*' element={<MovieDetails />} />
-                    {/* add: */}
-                    {/* <Route path="*" element={<NotFoundPath />} /> */}
-                </Routes>
-            </Suspense>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="movies" element={<Movies />} />
+                    <Route path="movies/:movieId" element={<MovieDetails />}>
+                        <Route path="cast" element={<Cast />} />
+                        <Route path="reviews" element={<Reviews />} />
+                    </Route>
+                </Route>
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
         </div>
     )
-	
 }
 
 

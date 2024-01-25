@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
-import { getReviews } from '../../services/movies';
-import ReviewsItem from '../../components/ReviewsItem/ReviewsItem'
-import ReviewsLack from '../../components/ReviewsLack/ReviewsLack'
-import Loader from '../../components/Loader/Loader'
+import { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom"
+import { getReviews } from 'services/movies'
+import ReviewsItem from 'components/ReviewsItem/ReviewsItem'
+import NoInformation from 'components/NoInformation/NoInformation'
+import Loader from 'components/Loader/Loader'
 
-import css from './Reviews.module.css'
+import css from 'components/Reviews/Reviews.module.css'
+
 
 const Reviews = () => {
     const [reviewsData, setReviewsData] = useState({});
@@ -35,13 +36,12 @@ const Reviews = () => {
             {error && <h1>{error}</h1>}
             {isLoading ? <Loader /> :
                 <>
+                    <h2 className={css.title}>Reviews</h2>
                     {reviewsData.results?.length > 0 ? (
-                        <ul className={css.gallery}>
+                        <ul className={css.list}>
                             {reviewsData.results?.map((el, index) => <ReviewsItem element={el} key={index} />)}
-                        </ul>)
-                        // < Outlet />  ???
-                        :
-                        <ReviewsLack />}
+                        </ul>) :
+                        <NoInformation />}
                 </>
             }   
         </>

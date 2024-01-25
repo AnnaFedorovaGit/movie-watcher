@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
-import { useSearchParams } from "react-router-dom";
-import { getMoviesByName } from '../../services/movies';
-import MoviesList from '../../components/MoviesList/MoviesList'
-import Loader from '../../components/Loader/Loader'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from "react-router-dom"
+import { getMoviesByName } from 'services/movies'
+import MoviesList from 'components/MoviesList/MoviesList'
+import Loader from 'components/Loader/Loader'
 
-import { ReactComponent as IconSearch } from "../../images/search.svg";
-import css from './Movies.module.css'
+import { ReactComponent as IconSearch } from 'images/search_icon.svg'
+import css from 'pages/Movies/Movies.module.css'
 
 
 const Movies = () => { 
     const [searchParams, setSearchParams] = useSearchParams();
-    const [searchedMovies, setSearchedMovies] = useState({});
+    const [searchedMovies, setSearchedMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
     const query = searchParams.get('query');
@@ -44,17 +44,19 @@ const Movies = () => {
     }
         
     return (
-        <section className={css.wrapper}>
-            <form onSubmit={handleSubmit} className={css.form}>
-                <div className={css.wrapper}>
-                    <label className={css.formLabel}>
-                        Find movie
-                    </label>
-                    <input type='text' name='query' className={css.formInput} /> 
+        <section>
+            <form onSubmit={handleSubmit}>
+                <h1 className={css.title}>Find movies</h1>
+                <div className={css.castomInputWrapper}>
+                    <div className={css.castomInput}>
+                        <input type='text' name='query' autoFocus placeholder='Start searching...' className={css.formInput} /> 
+                        <button type='submit' className={css.button}>
+                            <div className={css.iconWrapper}>
+                                <IconSearch className={css.iconSearch} />
+                            </div>
+                        </button>
+                    </div>
                 </div>
-                <button type='submit' className={css.button}>
-                    <IconSearch className={css.iconSearch} />
-                </button>
             </form>
 
             {error && <h1>{error}</h1>}
@@ -62,11 +64,12 @@ const Movies = () => {
                 <>
                     {searchedMovies.results?.length > 0 &&
                         (<>
-                            <h1 className={css.title}>Movies by your request:</h1>
+                            <h2 className={css.titleTwo}>Result of your request:</h2>
                             <MoviesList movies={searchedMovies.results} />
                         </>)
-
-                        // <h2>We don't have any movies for your request.</h2>
+                    } 
+                    {searchedMovies.results?.length === 0 &&
+                        <p className={css.caption}>Movies haven't been found by your request.</p>
                     }
                 </>
             }
