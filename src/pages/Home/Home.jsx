@@ -64,7 +64,7 @@ const Home = () => {
                 {isLoading ? <Loader /> :
                     <>
                         <Outlet />
-                        <h1 className={css.title}>Trending movies today</h1>
+                        <h1 className={css.title}>Trending movies</h1>
                         <MoviesList movies={movies} page={page} />
                         <div className={css.paginationWrapper}>
                             <BasicPagination count={totalPages} changePage={changePage} currentPage={page} />
