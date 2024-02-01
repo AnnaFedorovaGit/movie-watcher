@@ -12,3 +12,9 @@
   justify-content: space-evenly;
   gap: 40px 30px;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gallery {
+    gap: 40px 40px;
+  }
+}

@@ -3,8 +3,20 @@
   margin-bottom: 7px;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .caption {
+    font-size: 16px;
+  }
+}
+
 .text {
   font-size: 17px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .text {
+    font-size: 14px;
+  }
 }
 
 .text::after {

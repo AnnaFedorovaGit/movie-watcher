@@ -53,6 +53,13 @@
   box-shadow: var(--primary-shadow);
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .image {
+    width: 300px;
+    height: 450px;
+  }
+}
+
 .inner {
   display: flex;
   gap: 20px;
@@ -69,9 +76,21 @@
   line-height: 94%;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
 .text {
   font-weight: 500;
   margin-top: 15px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .text {
+    font-size: 16px;
+  }
 }
 
 .line {
@@ -109,6 +128,13 @@ th {
   font-weight: 400;
   padding: 6px;
   padding-left: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  td,
+  th {
+    font-size: 14px;
+  }
 }
 
 .list {

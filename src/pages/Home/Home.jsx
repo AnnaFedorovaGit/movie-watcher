@@ -4,6 +4,7 @@ import { getTrendingMovies } from 'services/movies'
 import MoviesList from 'components/MoviesList/MoviesList'
 import Loader from 'components/Loader/Loader'
 import BasicPagination from 'components/BasicPagination/BasicPagination'
+import ScrollToTop from 'components/ScrollToTop/ScrollToTop'
 
 import css from 'pages/Home/Home.module.css'
 
@@ -69,6 +70,7 @@ const Home = () => {
                         <div className={css.paginationWrapper}>
                             <BasicPagination count={totalPages} changePage={changePage} currentPage={page} />
                         </div>
+                        <ScrollToTop />
                     </>
                 }
             </section>

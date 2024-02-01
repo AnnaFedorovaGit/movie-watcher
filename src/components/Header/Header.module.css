@@ -15,9 +15,15 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 250px;
+  width: 249px;
   padding-top: 120px;
   gap: 15px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navigation {
+    width: 170px;
+  }
 }
 
 .headerLink {

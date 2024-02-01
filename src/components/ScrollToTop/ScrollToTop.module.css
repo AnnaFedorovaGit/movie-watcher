@@ -1,0 +1,36 @@
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 4%;
+  right: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  background-color: rgba(89, 176, 179, 0.2);
+  border: none;
+  border-radius: 50%;
+  z-index: 999;
+  transition: all 350ms ease-in-out;
+}
+
+.scrollToTopBtn::before {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(40, 127, 146, 0.3);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.arrow {
+  transform: rotate(270deg);
+  fill: var(--primary-light-color);
+}
+
+.scrollToTopBtn:hover {
+  background-color: var(--primary-turquoise-color);
+  scale: 1.05;
+}

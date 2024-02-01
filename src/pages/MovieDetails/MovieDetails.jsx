@@ -2,6 +2,7 @@ import { Suspense, useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useParams, useLocation, Outlet } from "react-router-dom";
 import { getMovieDetails } from 'services/movies'
 import Loader from 'components/Loader/Loader'
+import ScrollToTop from 'components/ScrollToTop/ScrollToTop'
 
 import { ReactComponent as IconArrow } from 'images/arrow_icon.svg'
 import defaultImage from 'images/default-image.jpg'
@@ -57,7 +58,7 @@ const MovieDetails = () => {
 
                     </div>
                     <div className={css.inner}>
-                        <img className={css.image} src={!poster_path ? defaultImage : imagePath} alt={title} width='300' height='450'/>
+                        <img className={css.image} src={!poster_path ? defaultImage : imagePath} alt={title} width='230' height='345'/>
                         <div className={css.infoWrapper}>
                             <div className={css.line}></div>
                             <table className={css.table}>
@@ -107,6 +108,7 @@ const MovieDetails = () => {
                     <Suspense fallback={<Loader />}>
                         <Outlet />
                     </Suspense>
+                    <ScrollToTop/>
                 </>
             }
         </section>
