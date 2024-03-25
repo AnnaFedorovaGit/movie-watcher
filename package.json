@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-05-movies",
+  "name": "movie-watcher",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://annafedorovagit.github.io/goit-react-hw-05-movies/",
+  "homepage": "https://annafedorovagit.github.io/movie-watcher/",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
