@@ -1,5 +1,3 @@
-@import-normalize;
-
 :root {
   --primary-dark-color: #0d2544;
   --primary-turquoise-color: #287f92;
@@ -71,10 +69,4 @@ img {
 a {
   text-decoration: none;
   color: var(--primary-dark-color);
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  padding: 45px 25px 50px 25px;
 }
